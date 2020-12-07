@@ -25,7 +25,7 @@ SECRET_KEY = 'e!1gi%rfd^*fq7s%mrl)26a)76nkrfm=$273l0)&4)(+96hcr%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://email-scrapping-tool.herokuapp.com/']
 
 
 # Application definition
