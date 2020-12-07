@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Scrapping | Scrap any website</title>
+  {% load static %}
+  <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="{% static 'index.css' %}">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img  class="logo" src="{% static 'logo.png' %}" alt="Email Scrapper">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Pricing</a>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="container">
+        <h2>Scrap Emails from any website and get in CSV format</h2>
+        <br> <br>
+        <label for="" class="text-muted">Please enter the URL to get started</label>
+        <form action="/" method="post" >
+            {% csrf_token %}
+
+            <div class="form-group">
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">https://</span>
+                </div>
+                <input type="text" name="url" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div> 
+        </div>
+        <script>
+            function download(){
+              const btn=  document.getElementById("submit")
+              btn.textContent="Please Wait";
+              btn.setAttribute("disabled",true)
+            }
+        </script>
+        <div>
+            <button type="submit"  id="submit" class="btn btn-dark">Scrap Now</button>
+        </div>
+    </div>
+</form>
+
+{% block download %}
+{% endblock download %}
+
+</body>
+</html>
