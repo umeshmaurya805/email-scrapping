@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from selenium import  webdriver as wb
+from selenium import  webdriver 
 from bs4 import BeautifulSoup
 import re
 import csv  
